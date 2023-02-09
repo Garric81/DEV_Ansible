@@ -1,3 +1,13 @@
+[web]
+node1
+node2
+
+[database]
+node3
+
+
+
+
 [all]
 192.168.1.73
 192.168.1.80

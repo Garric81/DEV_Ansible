@@ -3,7 +3,7 @@ ansible-navigator:
   ansible:
     inventory:
       entries:
-      - /home/ansible/DEV_Ansible/hosts
+      - /home/rhel/ansible-files/hosts
   execution-environment:
     container-engine: podman
     enabled: true

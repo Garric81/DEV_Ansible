@@ -1,5 +1,6 @@
+---
 - name: Tomcat deployment playbook
-  hosts: 192.168.1.5
+  hosts: 192.168.1.129
   remote_user: ansible
   roles:
     - tomcat

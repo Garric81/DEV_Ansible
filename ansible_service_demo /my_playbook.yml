@@ -2,7 +2,7 @@
 - name: Ansible service module example
 # Defining the remote server where the package will be deployed 
   hosts: localhost
-  remote_user: ubuntu   # Using Remote user as ubuntu
+  remote_user: ansible   # Using Remote user as ubuntu
   become: true
   tasks:  
 

@@ -5,3 +5,15 @@
 192.168.1.140 ansible_user=ansible ansible_ssh_pass=ansible
 192.168.1.141 ansible_user=ansible ansible_ssh_pass=ansible
 192.168.1.142 ansible_user=ansible ansible_ssh_pass=ansible
+# Group name of hosts (you can rename this as you like).
+[webservers]
+
+# List of hosts (you can name these hosts "ansible_host" as you like).
+server1 ansible_host=<ip address>
+server2 ansible_host=<ip address>
+
+# Sets variables applied to all hosts.
+[all:vars]
+# Since the default version of Python on most Ubuntu distributions is Python 2
+# set Ansible to use Python 3 on all managed hosts.
+ansible_python_interpreter=/usr/bin/python3

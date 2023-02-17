@@ -1,9 +1,0 @@
----
-- name: create a user using a variable
-  hosts: web
-  vars:
-    user: ansible
-  task:
-    - name: create a  user {{ user }}
-      user:
-        name: "{{ user }}"

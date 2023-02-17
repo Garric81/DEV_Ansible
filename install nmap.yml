@@ -1,0 +1,14 @@
+---
+- name: install nmap
+ hosts: linux #Exaple host
+  tasks:
+  - name: install nmap
+    yum: name=nmap
+  - name: enable nmap
+    sevvice: name=nmap enable=true:
+ - hosts: linux #Exaple host
+   tasks:
+   - name: install nmap
+     yum: name=nmap
+   - name: enable nmap
+    sevvice: name=nmap enable=true

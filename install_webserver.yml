@@ -1,0 +1,40 @@
+---
+- name: enabled webserver
+  hosts: 192.168.1.** #example
+  tasks:
+    - name: install httpd and firewall
+      yum:
+        name:
+          - httpd
+          - firewall
+        state: latest
+    - name: install welcom page
+      copy:
+        content: "Hello world"
+        dest: /var/www/html/index.html
+    - name: start web services
+      service:
+        name: httpd
+        enabled: True
+        state: started
+    - name: start firewalld service
+      service:
+        name: firewalld
+        enabled: True
+        state: started
+    - name: open firewalld
+      firewalld:
+        service: httpd
+        permanent: True
+        state:  enabled
+        immediate: yes
+
+- name: test webserver access
+  hosts: localhost
+  become: no
+  tasks:
+    - name: connect  to web server
+      url:
+        url: http:192.168.1.**
+        return_content: yes
+        status_code: 200

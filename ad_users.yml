@@ -1,0 +1,28 @@
+---
+- name: Your Windows Playbook
+  hosts: win
+  vars:
+    ansible_ssh_user: administrator
+    ansible_ssh_pass: ThisIsWhereStrongPassesGo
+    ansible_connection: winrm
+    ansible_winrm_server_cert_validation: ignore
+
+- tasks:
+- name: Install AD Services feature
+  win_feature:
+    name: AD-Domain-Services
+    include_management_tools: yes
+    include_sub_features: yes
+    state: present
+  register: result
+
+- name: Create new forest
+  win_domain:
+    dns_domain_name: tycho.local
+    safe_mode_password: RememberTheCant!
+  register: result
+
+- name: Reboot after creation
+  win_reboot:
+    msg: "Server config in progress; rebooting..."
+  when: result.reboot_required

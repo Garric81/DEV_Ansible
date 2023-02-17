@@ -1,0 +1,10 @@
+---
+- name: install nginx
+  hosts: 172.20.32.40
+  task:
+  - name: install nginx
+    yum: install=nginx
+  - name:  enable nginx
+    service: name=nginx enabled=true
+  - name: nginx status
+    service: name=nginx state=status

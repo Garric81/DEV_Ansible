@@ -1,0 +1,17 @@
+---
+- name: remove httpd
+  hosts: 192.168.1.**
+  tasks:
+    - name: close firewall
+      firewolld:
+        service: httpd
+        permanent: yes
+        state: disabled
+    - name: remove files
+      files:
+        path: /var/www/html/index.html
+        state: absent
+    - name:  remove pakages
+      package:
+        name: httpd
+        state: absent

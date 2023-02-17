@@ -1,0 +1,11 @@
+---
+- name: Backup web
+  hosts: all
+  become: true
+  gather_facts: false
+  tasks:
+    - name: Archive DocRoot
+      archive:
+        path: /home/kodachi/Downloads/Ansibal/
+        dest: /media/kodachi/Новый том/Arhive_ansibal/my_ansibal.tgz
+        format: gz

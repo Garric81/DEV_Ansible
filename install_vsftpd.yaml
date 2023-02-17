@@ -1,0 +1,14 @@
+---
+- name: deploy  vsftpd
+  hosts: 192.168.1.52 #Exaple host
+  tasks:
+  - name: install vsftpd
+    yum: name=vsftpd
+  - name: enable vsftpd
+    sevvice: name=vstpd enable=true
+  - name: create readme file
+    copy:
+      content: "Welcome to  this FTP server"
+      dest: /var/ftp/pub/README
+      force: no
+      mode: 0444

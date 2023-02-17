@@ -1,0 +1,9 @@
+---
+- name: show arrays
+  hosts: example*
+  vars_files:
+    - vars/users
+  tasks:
+    - name: print array values
+      debug:
+        msg: "User {{ user.jsoc_admins }} has  homedirectory {{ user.jsoc_admins.homedir }} and shell {{ user.jsoc_admins.shell }}"

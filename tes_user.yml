@@ -1,0 +1,10 @@
+---
+- mame: test register
+  host: linux
+  tasks:
+    - shell: cat /etc/passwd
+      register: passwd_contents
+    - debug:
+        msg: echo "passwd contains user jsoc_arhirected"
+      when: passwd_contents.stdout.find(jsoc_arhirected) != -l
+

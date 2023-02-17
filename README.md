@@ -30,6 +30,6 @@ cd ansible-files
 mkdir roles
 ansible-galaxy init --offline roles/apache_vhost
 tree roles
-
+https://redos.red-soft.ru/base/server-configuring/remote-administration/ansible-install/
 
 

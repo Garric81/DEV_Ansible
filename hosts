@@ -1,13 +1,6 @@
-#[web]
-#node1
-#node2
-
-#[database]
-#node3
-
-[all]
-192.168.1.64 ansible_user=ansible ansible_ssh_pass=ansible
-192.168.1.73 ansible_user=ansible ansible_ssh_pass=ansible
-192.168.1.80 ansible_user=ansible ansible_ssh_pass=ansible
-192.168.1.140 ansible_user=ansible ansible_ssh_pass=ansible
-192.168.1.141 ansible_user=ansible ansible_ssh_pass=ansible
+[server_all]
+node1 ansibal_host=192.168.1.64 ansible_user=ansible
+#192.168.1.73 ansible_user=ansible ansible_ssh_pass=ansible
+#192.168.1.80 ansible_user=ansible ansible_ssh_pass=ansible
+#192.168.1.140 ansible_user=ansible ansible_ssh_pass=ansible
+#192.168.1.141 ansible_user=ansible ansible_ssh_pass=ansible

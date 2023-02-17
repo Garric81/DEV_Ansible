@@ -1,6 +1,6 @@
 ---
 - name: Manage User Account
-  hosts: all
+  hosts: 192.168.1.64
   become: true
   gather_facts: false
   tasks:

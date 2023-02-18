@@ -1,7 +1,7 @@
 ---
 - name: Ansible Create user functionlity module demo
-  hosts: 192.168.1.64 # Defining the remote server inventory host group
-  remote_user: ansible # Using Remote user as ubuntu
+  hosts: node1
+  remote_user: ansible
   tasks:
     - name: Add the user 'Adam Listek' with a specific uid and a primary group of 'sudo'
       ansible.builtin.user:

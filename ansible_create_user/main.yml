@@ -11,23 +11,17 @@
         group: sudo
         createhome: yes        # Defaults to yes
         home: /home/adamlis    # Defaults to /home/<username>
-
-	# Adding the user qa_editor in the editor group 
     - name: Add group "editor" to remote node
       group:
         name: qa_editor
         gid: 2212
         state: present
-
-	# Adding the user Rochela in the qa_editor group and bash shell
     - name: Add the user 'Rochella' with a bash shell, appending the group 'editor' to the user's groups
       ansible.builtin.user:
         name: rochella
         shell: /bin/bash
         groups: qa_editor
         append: yes
-
-# Removing the user shanky from the system 
     - name: Remove the user 'Shanky' if present in the linux system
       ansible.builtin.user:
         name: shanky3

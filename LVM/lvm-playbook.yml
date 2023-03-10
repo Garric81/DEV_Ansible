@@ -1,0 +1,27 @@
+---
+ - hosts: bngtest
+   become: yes
+   tasks:
+
+   - name: Create Volume Group
+     lvg:
+       vg: "{{ vg_name }}"
+       pvs: "{{ pvs }}"
+
+   - name: Create Logical Volume
+     lvol:
+       vg: "{{ vg_name }}"
+       lv: "{{ lv_name }}"
+       size: "{{ lv_size }}"
+
+  - name: Creafe File System
+    filesystem:
+      fstype: ext4
+      dev: "/dev/{{ vg_name }}/{{ lv_name }}"
+
+  - name: Mount Logical volume FS
+    mount:
+      name: "/{{ mount_name }}"
+      src: "/dev/{{ vg_name }}/{{ lv_name }}"
+      fstype: ext4
+      state: mounted

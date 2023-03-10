@@ -1,6 +1,6 @@
 ---
 - name: Using LVMs
-  hosts: 172.32.*.*
+  hosts: bngtest
   gather_facts: no
   become: true
   tasks:
